@@ -11,7 +11,9 @@ Additional features were also used: day of the week, week number, month number, 
 **Warning:** Key rates, RTSI rate and Inflation rate were added as a csv files, before using this module you should update data in these csv files.
 
 ### Description of methods
-This module uses these methods: Regression Lasso, Linear Regression and Random Forest for feature selection
+This module uses these methods: Regression Lasso, Linear Regression and Random Forest for feature selection.
+
+Module uses boosting(CatBoostRegressor) to improve prediction.
 
 ### Description of code and functions
 **For using functions from module we need to install module using these command ``pip install module``**
@@ -27,10 +29,10 @@ df.predict_one_step('date', is_fact=True) - prediction for the next day, argumen
 ### Description of files
 [dataset.xlsx](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/dataset.xlsx) - data with bank balance
 
-[example_code.ipynb](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/example_code.ipynb) - example of using module
+[example_code.ipynb](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/example_code.ipynb) - example of using module.
 
-[module.py](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/module.py) - module which you need to install before using it
+[module.py](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/module.py) - module which you need to install before using it.
 
-[additional datasets](https://github.com/Spacelightpony/University/tree/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/additional%20datasets) - exogenous data which you should update before using module
+[additional datasets](https://github.com/Spacelightpony/University/tree/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/additional%20datasets) - exogenous data which you should update before using module.
 
-[All files in zip.zip](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/All%20files%20in%20zip.zip) - for easy downloading all data for module(module is also included) use this file
+[All files in zip.zip](https://github.com/Spacelightpony/University/blob/Main/FTIAD%20Projects/Module%20for%20forecasting%20the%20time%20series/All%20files%20in%20zip.zip) - for easy downloading all data for module(module is also included) use this file.
