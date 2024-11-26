@@ -1,2 +1,2 @@
-![Описание изображения](ADDProjects/NLP/HW1/app_example.gif)
+![Описание изображения](University/ADD Projects/NLP/HW1/app_example.gif)
 
