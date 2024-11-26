@@ -3,26 +3,19 @@ import pandas as pd
 from .model import WordCompletor, NGramLanguageModel, TextSuggestion
 from pathlib import Path
 
-# Определяем путь к файлу corpus.xlsx относительно текущего скрипта
+#путь к файлу
 script_dir = Path(__file__).parent
 corpus_path = script_dir / 'corpus.xlsx'
 
-# Проверяем, существует ли файл
-if not corpus_path.exists():
-    raise FileNotFoundError(f"Файл не найден: {corpus_path}")
 
-# Загрузка данных из Excel файла
+#загрузка екселя с корпусом данных
 df = pd.read_excel(corpus_path)
 
-# Проверка наличия нужного столбца
-if 'updated_fully_cleaned_message' in df.columns:
-    sentences = df['updated_fully_cleaned_message'].dropna().tolist()
-    # Токенизация предложений
-    corpus = [sentence.strip().split() for sentence in sentences]
-else:
-    raise ValueError("Column 'updated_fully_cleaned_message' not found in corpus.xlsx")
+sentences = df['updated_fully_cleaned_message'].dropna().tolist()
+#токенизация корпуса
+corpus = [sentence.strip().split() for sentence in sentences]
 
-# Инициализация моделей
+#создаем экземпляры классов
 word_completor = WordCompletor(corpus)
 n_gram_model = NGramLanguageModel(corpus, n=2)
 text_suggester = TextSuggestion(word_completor, n_gram_model)
@@ -41,9 +34,9 @@ class State(rx.State):
             return rx.window_alert("Поле ввода не должно быть пустым")
 
         self.processing, self.complete = True, False
-        yield  # Это нужно, чтобы обновить состояние и показать индикатор загрузки
+        yield  
 
-        # Генерация текста с использованием моделей
+        #генерация текста
         try:
             suggestions = text_suggester.suggest_text(self.prompt, n_words=3, n_texts=1)
             if suggestions:
@@ -92,7 +85,7 @@ def index():
         height="100vh",
     )
 
-# Создание приложения и добавление страницы
+#создание приложения
 app = rx.App()
 app.add_page(index, title="Генератор текста")
 
