@@ -1,1 +1,1 @@
-![Описание изображения](path/to/your.gif)
+![Описание изображения](ADD Projects/NLP/HW1/app_example.gif)
